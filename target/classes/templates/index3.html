@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>中国建设银行数链云贷    </title>
+	</head>
+	<body>
+		<img class="mb-4" src="./image/ccb1.png" alt="" width="300" height="50">
+		<br></br>
+		<div style="margin:0 auto;width:1500px">
+			<h1 class="h3 mb-3 font-weight-normal">企业信息数据</h1>
+			<br></br>
+			<div>
+				<div style="height:100px;width:500px;float:left;margin-right:100px">
+					<form class="form-signin" name="text" action="/cnyd" method="get">
+				  		<textarea name="text" cols="70" rows="15" placeholder="请在此输入数据" th:text="${text}"></textarea>
+				  		<br>
+				  		<input type="submit" value="解析" />
+			  			<input type="button" value="返回" onclick="location.href='index.html'"/>
+			  			<input type="checkbox" name="savedata" value="true"> 存入数据库
+					</form>
+				</div>
+				
+				<div style="height:230px;width:600px;float:left;border:1px solid gray">
+					<!-- 在样式中加入white-space:pre就可以识别/n为换行符了 -->
+					<span style= "font-size:26px;color:black;white-space:pre;"  th:text="${result}"></span>	
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
